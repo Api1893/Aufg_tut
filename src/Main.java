@@ -10,7 +10,6 @@ class Main {
         Medal silverMedal = new Medal("Mickey", "Silver",2026);
 
         // Aufgabe  3
-
         System.out.println(goldMedal.isSame(goldMedalCapital));
         System.out.println(goldMedal.isSame(silverMedal));
         System.out.println(silverMedal.isSame(silverMedal));
