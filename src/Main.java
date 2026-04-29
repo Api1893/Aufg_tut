@@ -2,8 +2,8 @@ class Main {
     public static void main(String[] args) {
         Fraction half = new Fraction (-12, -18);
         //Aufgabe 1
-        //System.out.println(half.getNumerator());
-        //System.out.println(half.getDenominator());
+        System.out.println(half.getNumerator());
+        System.out.println(half.getDenominator());
 
         Medal goldMedal = new Medal("Donald", "Gold", 2026);
         Medal goldMedalCapital = new Medal("Donald", "GOLD", 2026);
