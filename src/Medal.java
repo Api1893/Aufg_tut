@@ -10,7 +10,7 @@ public class Medal {
         this.year = year;
     }
 
-    // Aufgabe 3
+    // Aufgabe 3, Blatt 4
     public boolean isSame(Medal equalsString) {
         String nameCompare = equalsString.name.toLowerCase();
         String materialCompare = equalsString.material.toLowerCase();
@@ -27,7 +27,7 @@ public class Medal {
         } else return false;
     }
 
-    // Aufgabe 4
+    // Aufgabe 4, Blatt 4
     public boolean isLess(Medal compareObject) {
         String firstCompareAlphabet = compareObject.name.toLowerCase();
         String secondCompareAlphabet = compareObject.material.toLowerCase();
@@ -37,22 +37,24 @@ public class Medal {
         int lexicographicalOrderMaterial = secondCompareAlphabet.compareTo(this.material.toLowerCase());
 
         if (lexicographicalOrderName < 0) {
-            System.out.println(lexicographicalOrderName + " Weiter vorne bzw. kleiner");
+            //System.out.println(lexicographicalOrderName + " Weiter vorne bzw. kleiner");
             return false;
         } else if (lexicographicalOrderName > 0) {
-            System.out.println(lexicographicalOrderName + " Weiter hinten bzw. größer");
+            //System.out.println(lexicographicalOrderName + " Weiter hinten bzw. größer");
             return true;
         } else if (lexicographicalOrderMaterial < 0) {
-            System.out.println("Weiter vorne, bzw. Negativer");
+            //System.out.println("Weiter vorne, bzw. Negativer");
             return false;
         } else if (lexicographicalOrderMaterial > 0) {
-            System.out.println("Weiter hinten, bzw. Positiver");
+            //System.out.println("Weiter hinten, bzw. Positiver");
             return true;
         } else if (thirdCompareYear > this.year) {
-            System.out.println("Weiter hinten, bzw. größer");
+            //System.out.println("Weiter hinten, bzw. größer");
             return true;
         } else {
-            return false;
+            //System.out.println("Alles gleich");
+            return true;
         }
     }
+
 }
