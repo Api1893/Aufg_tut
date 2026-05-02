@@ -57,4 +57,10 @@ public class Medal {
         }
     }
 
+    @Override
+    public String toString() {
+        // Hier baust du den String zusammen, den du auf der Konsole sehen willst
+        return this.name + " - " + this.material + " - " + this.year;
+    }
+
 }

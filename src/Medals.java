@@ -3,7 +3,7 @@ public class Medals {
     private int size = 0;
     private int counter;
 
-    // Konstruktor Medals
+    // _________________ Konstruktor Medals ________________________
     Medals(int capacity) {
         this.medalArray = new Medal[capacity]; // Hier kommen nur Objekte vom Typ Medal
         this.counter = 0;
@@ -17,14 +17,14 @@ public class Medals {
     }
 
     public boolean add(Medal addingMedal) {
-        // 1. Prüfen, ob noch Platz im Array ist
+        // Prüfen, ob noch Platz im Array ist
         if (size == medalArray.length) {
             return false;
         }
         // 2. Das Medal-Objekt an die nächste freie Stelle setzen
         medalArray[size] = addingMedal;
         size++;
-        // 3. Sortierung durch fortgesetztes Vertauschen
+        // Sortierung durch fortgesetztes Vertauschen
         for (int i = size - 1; i > 0; i--) {
             // Nutze Methode isLess: Wenn das neue Element "kleiner" ist als sein linker Nachbar, tauschen.
             if (medalArray[i].isLess(medalArray[i - 1])) {
@@ -74,5 +74,12 @@ public class Medals {
             }
         }
         return -1; // Nicht enthalten
+    }
+
+    public void dump() {
+        int thoroughly = size;
+        for (int i = 0; i < thoroughly; i++) {
+            System.out.println(medalArray[i]);
+        }
     }
 }
