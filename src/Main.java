@@ -18,16 +18,19 @@ class Main {
         myMedals.add(m3);
 
         boolean found = myMedals.contains(searchMedal);
+        System.out.println("_______________Aufgabe_1____________________");
         System.out.println(found);
 
          */
 
         // _______________Aufgabe 1 b)_____________________________________
+        /*
 
         Medal goldMedal = new Medal("Donald", "Gold", 2026);
         Medal silverMedal = new Medal("Mickey", "Silver", 2026);
         Medal bronzeMedal = new Medal("Goofy", "Bronze", 1972);
         Medal moreGold = new Medal("Donald", "Bronze", 1972);
+        //Medal moneyGold = new Medal("Apisit", "Silver", 2000);
 
         Medal medals[] = {goldMedal, silverMedal, bronzeMedal, moreGold};
         Medals olympics2026 = new Medals(4);
@@ -48,7 +51,19 @@ class Main {
         }
         System.out.println(olympics2026.size());
 
+         */
+
         // _________________Aufgabe_2_a)_________________________
+        SortedLinkedList numbers = new SortedLinkedList();
+        // Zahlen unsortiert hinzufügen
+        numbers.add(5);
+        numbers.add(4);
+        numbers.add(3);
+        numbers.add(2);
+        numbers.add(1);
+        numbers.add(6);
+        numbers.dump();
+        System.out.println(numbers.size());
 
     }
 }

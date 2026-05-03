@@ -9,7 +9,8 @@ public class Medals {
         this.counter = 0;
     }
 
-    // _______________________ Methoden _________________
+    // _______________________ Methoden __________________________
+
     private void swap(int i, int j) {
         Medal temp = medalArray[i];
         medalArray[i] = medalArray[j];
@@ -47,10 +48,10 @@ public class Medals {
     }
 
     public boolean remove (Medal removeMedal) {
-        for (int i = 0; i < counter; i++) {
+        for (int i = 0; i < this.medalArray.length; i++) {
             if (medalArray[i] == removeMedal) {
-                medalArray[i] = medalArray[counter - 1];
-                counter--;
+                medalArray[i] = medalArray[this.medalArray.length - 1];
+                size--;
                 return true;
             }
         }
@@ -60,7 +61,7 @@ public class Medals {
     // Binary search
     private int index(Medal key) {
         int low = 0;
-        int high = size - 1; // Nutze 'size' statt 'counter' für Konsistenz [12]
+        int high = size - 1;
         while (low <= high) {
             int mid = (low + high) / 2;
             Medal midMedal = medalArray[mid];
