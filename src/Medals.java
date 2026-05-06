@@ -17,17 +17,18 @@ public class Medals {
         medalArray[j] = temp;
     }
 
+    // Vertauschen
     public boolean add(Medal addingMedal) {
         // Prüfen, ob noch Platz im Array ist
         if (size == medalArray.length) {
             return false;
         }
-        // 2. Das Medal-Objekt an die nächste freie Stelle setzen
+        // Das Medal-Objekt an die nächste freie Stelle setzen
         medalArray[size] = addingMedal;
         size++;
         // Sortierung durch fortgesetztes Vertauschen
         for (int i = size - 1; i > 0; i--) {
-            // Nutze Methode isLess: Wenn das neue Element "kleiner" ist als sein linker Nachbar, tauschen.
+            // Wenn das Element kleiner ist, als das linke Element, dann tauschen
             if (medalArray[i].isLess(medalArray[i - 1])) {
                 swap(i - 1, i);
             } else {
@@ -47,7 +48,7 @@ public class Medals {
         return size;
     }
 
-    public boolean remove (Medal removeMedal) {
+    public boolean remove(Medal removeMedal) {
         for (int i = 0; i < this.medalArray.length; i++) {
             if (medalArray[i] == removeMedal) {
                 medalArray[i] = medalArray[this.medalArray.length - 1];

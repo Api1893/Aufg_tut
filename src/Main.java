@@ -1,8 +1,6 @@
 class Main {
     public static void main(String[] args) {
 
-        // Array wird erzeugt mit 5 Plätzen
-        /*
         Medals myMedals = new Medals(5);
         Medal searchMedal = new Medal("Pa", "b", 2021);
 
@@ -18,13 +16,10 @@ class Main {
         myMedals.add(m3);
 
         boolean found = myMedals.contains(searchMedal);
-        System.out.println("_______________Aufgabe_1____________________");
+        System.out.println("_______________Aufgabe_1_a)___________________");
         System.out.println(found);
 
-         */
-
         // _______________Aufgabe 1 b)_____________________________________
-        /*
 
         Medal goldMedal = new Medal("Donald", "Gold", 2026);
         Medal silverMedal = new Medal("Mickey", "Silver", 2026);
@@ -34,6 +29,7 @@ class Main {
 
         Medal medals[] = {goldMedal, silverMedal, bronzeMedal, moreGold};
         Medals olympics2026 = new Medals(4);
+        System.out.println("______________Aufgabe_1_b)_____________");
 
         for (int i = 0; i < medals.length; i++) {
             System.out.println(olympics2026.add(medals[i]));
@@ -51,9 +47,8 @@ class Main {
         }
         System.out.println(olympics2026.size());
 
-         */
-
         // _________________Aufgabe_2_a)_________________________
+        System.out.println("______________Aufgabe_2_a)____________");
         SortedLinkedList numbers = new SortedLinkedList();
         // Zahlen unsortiert hinzufügen
         numbers.add(5);
@@ -64,6 +59,5 @@ class Main {
         numbers.add(6);
         numbers.dump();
         System.out.println(numbers.size());
-
     }
 }
