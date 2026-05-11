@@ -53,9 +53,4 @@ public class Medal {
             return true;
         }
     }
-
-    public boolean Comparable(Medal medalObject) {
-
-        return true;
-    }
 }

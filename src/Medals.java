@@ -10,7 +10,6 @@ public class Medals {
     }
 
     // _______________________ Methoden __________________________
-
     private void swap(int i, int j) {
         Medal temp = medalArray[i];
         medalArray[i] = medalArray[j];
@@ -78,6 +77,7 @@ public class Medals {
         return -1; // Nicht enthalten
     }
 
+    @Override
     public String toString() {
         for (int i = 0; i < medalArray.length; i++) {
             if(medalArray[i] != null) {
