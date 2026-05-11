@@ -66,7 +66,7 @@ public class Medals {
         while (low <= high) {
             int mid = (low + high) / 2;
             Medal midMedal = medalArray[mid];
-            if (midMedal.isSame(key)) {
+            if (midMedal.equals(key)) {
                 return mid; // Gefunden!
             }
             if (midMedal.isLess(key)) {
@@ -78,10 +78,12 @@ public class Medals {
         return -1; // Nicht enthalten
     }
 
-    public void dump() {
-        int thoroughly = size;
-        for (int i = 0; i < thoroughly; i++) {
-            System.out.println(medalArray[i]);
+    public String toString() {
+        for (int i = 0; i < medalArray.length; i++) {
+            if(medalArray[i] != null) {
+                System.out.println(medalArray[i].name+", "+medalArray[i].material+", "+medalArray[i].year);
+            }
         }
+        return "";
     }
 }
