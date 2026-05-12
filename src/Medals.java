@@ -1,4 +1,5 @@
-public class Medals {
+public class Medals implements Container<Medals>{
+
     private Medal[] medalArray;
     private int size = 0;
     private int counter;

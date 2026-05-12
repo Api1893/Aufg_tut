@@ -24,7 +24,11 @@ class Main {
         SortedLinkedList numbers = new SortedLinkedList();
         System.out.println(silverMedal.equals(silber)); // Aufgabe 2 a)
 
-        System.out.println("______________Aufgabe_2_b)_____________");
+        System.out.println("______________Aufgabe_2_b)_&_c)_____________");
+        System.out.println("Sortiert und umgestellt");
 
+        System.out.println("______________Aufgabe_2_d)_____________");
+
+        System.out.println("______________Aufgabe_2_e)_____________");
     }
 }
