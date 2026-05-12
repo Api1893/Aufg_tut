@@ -1,4 +1,4 @@
-public class Medal {
+public class Medal implements Comparable<Medal> {
     protected String name;
     protected String material;
     protected int year;
@@ -31,7 +31,7 @@ public class Medal {
     }
 
     // Aufgabe 4, Blatt 4
-    public boolean isLess(Medal compareObject) {
+    public int compareTo(Medal compareObject){
         String firstCompareAlphabet = compareObject.name.toLowerCase();
         String secondCompareAlphabet = compareObject.material.toLowerCase();
         int thirdCompareYear = compareObject.year;
@@ -39,18 +39,24 @@ public class Medal {
         int lexicographicalOrderName = firstCompareAlphabet.compareTo(this.name.toLowerCase());
         int lexicographicalOrderMaterial = secondCompareAlphabet.compareTo(this.material.toLowerCase());
 
-        if (lexicographicalOrderName < 0) {
-            return false;
-        } else if (lexicographicalOrderName > 0) {
-            return true;
-        } else if (lexicographicalOrderMaterial < 0) {
-            return false;
-        } else if (lexicographicalOrderMaterial > 0) {
-            return true;
-        } else if (thirdCompareYear > this.year) {
-            return true;
+        if(lexicographicalOrderName < 0) {
+            // Wenn Name < 0
+            return -1;
+        } else if(lexicographicalOrderName > 0) {
+            return 1;
+        } else if(lexicographicalOrderMaterial < 0){
+            // Wenn MAterial < 0
+            return -1;
+        } else if(lexicographicalOrderMaterial > 0){
+            return 1;
+        } else if(thirdCompareYear < this.year) {
+            // Wenn Jahr < 0
+            return -1;
+        } else if(thirdCompareYear > this.year) {
+            return 1;
         } else {
-            return true;
+            // Wenn alles gleich ist
+            return 0;
         }
     }
 }

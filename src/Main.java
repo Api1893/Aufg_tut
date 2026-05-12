@@ -15,14 +15,16 @@ class Main {
         myMedals.add(goldMedal);
         myMedals.add(silverMedal);
         myMedals.add(bronzeMedal);
+        myMedals.add(moneyGold);
         myMedals.toString();    // Aufgabe 1 Test
 
         Medal medals[] = {goldMedal, silverMedal, bronzeMedal, moreGold};
         Medals olympics2026 = new Medals(6);
         System.out.println("______________Aufgabe_2_a)_____________");
         SortedLinkedList numbers = new SortedLinkedList();
+        System.out.println(silverMedal.equals(silber)); // Aufgabe 2 a)
 
-        System.out.println("Gleiche Medaillen: " + silverMedal.equals(silber));
+        System.out.println("______________Aufgabe_2_b)_____________");
 
     }
 }

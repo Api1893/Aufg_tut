@@ -17,10 +17,10 @@ public class Medals {
     }
 
     // Vertauschen
-    public boolean add(Medal addingMedal) {
+    public int add(Medal addingMedal) {
         // Prüfen, ob noch Platz im Array ist
         if (size == medalArray.length) {
-            return false;
+            return 0;
         }
         // Das Medal-Objekt an die nächste freie Stelle setzen
         medalArray[size] = addingMedal;
@@ -28,14 +28,14 @@ public class Medals {
         // Sortierung durch fortgesetztes Vertauschen
         for (int i = size - 1; i > 0; i--) {
             // Wenn das Element kleiner ist, als das linke Element, dann tauschen
-            if (medalArray[i].isLess(medalArray[i - 1])) {
+            if (medalArray[i].compareTo(medalArray[i - 1]) > 0) {
                 swap(i - 1, i);
             } else {
                 // Wenn es nicht mehr kleiner ist, ist die richtige Position erreicht.
-                return true;
+                return 0;
             }
         }
-        return true;
+        return 0;
     }
 
     public boolean contains(Medal containsMedal) {
@@ -68,7 +68,8 @@ public class Medals {
             if (midMedal.equals(key)) {
                 return mid; // Gefunden!
             }
-            if (midMedal.isLess(key)) {
+            // Hier wurde compareTo ausgetauscht mit isLess
+            if (midMedal.compareTo(key) < 0) {
                 low = mid + 1; // Suche in der rechten Hälfte weiter [9]
             } else {
                 high = mid - 1; // Suche in der linken Hälfte weiter [9]
