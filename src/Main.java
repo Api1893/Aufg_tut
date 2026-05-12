@@ -31,6 +31,6 @@ class Main {
         System.out.println("noch ncht fertig");
 
         System.out.println("______________Aufgabe_2_e)_____________");
-        System.out.println("noch ncht angefangen!");
+        System.out.println("noch nicht angefangen!");
     }
 }
