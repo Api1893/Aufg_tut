@@ -28,7 +28,9 @@ class Main {
         System.out.println("Sortiert und umgestellt");
 
         System.out.println("______________Aufgabe_2_d)_____________");
+        System.out.println("noch ncht fertig");
 
         System.out.println("______________Aufgabe_2_e)_____________");
+        System.out.println("noch ncht angefangen");
     }
 }
