@@ -30,7 +30,7 @@ public class Medal implements Comparable<Medal> {
         return false;
     }
 
-    // Aufgabe 4, Blatt 4
+    // Aufgabe 2 b) und c), Blatt 6
     public int compareTo(Medal compareObject){
         String firstCompareAlphabet = compareObject.name.toLowerCase();
         String secondCompareAlphabet = compareObject.material.toLowerCase();
