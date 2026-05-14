@@ -1,24 +1,25 @@
-public class Medals implements Container<Medals>{
+public class Medals<ME> implements Container<ME> {    // ME für Medal Elements
 
-    private Medal[] medalArray;
+    private ME[] medalArray;
     private int size = 0;
     private int counter;
 
     // _________________ Konstruktor Medals ________________________
     Medals(int capacity) {
-        this.medalArray = new Medal[capacity]; // Hier kommen nur Objekte vom Typ Medal
+        this.medalArray = (ME[]) new Object[capacity];
         this.counter = 0;
     }
 
     // _______________________ Methoden __________________________
     private void swap(int i, int j) {
-        Medal temp = medalArray[i];
+        // ME statt Medal, weil oben nun ME als Platzhalter für Medal gilt
+        ME temp = medalArray[i];
         medalArray[i] = medalArray[j];
         medalArray[j] = temp;
     }
 
     // Vertauschen
-    public int add(Medal addingMedal) {
+    public int add(ME addingMedal) {
         // Prüfen, ob noch Platz im Array ist
         if (size == medalArray.length) {
             return 0;
@@ -39,7 +40,7 @@ public class Medals implements Container<Medals>{
         return 0;
     }
 
-    public boolean contains(Medal containsMedal) {
+    public boolean contains(ME containsMedal) {
         // Ruft die binäre Suche auf und prüft, ob ein gültiger Index gefunden wurde
         return index(containsMedal) >= 0;
     }
@@ -60,12 +61,12 @@ public class Medals implements Container<Medals>{
     }
 
     // Binary search
-    private int index(Medal key) {
+    private int index(ME key) {
         int low = 0;
         int high = size - 1;
         while (low <= high) {
             int mid = (low + high) / 2;
-            Medal midMedal = medalArray[mid];
+            ME midMedal = medalArray[mid];
             if (midMedal.equals(key)) {
                 return mid; // Gefunden!
             }
