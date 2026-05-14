@@ -5,8 +5,9 @@ public class Medals<ME extends Comparable<ME>> implements Container<ME> {    // 
 
     // _________________ Konstruktor Medals ________________________
     Medals(int capacity) {
-        this.medalArray = (ME[]) new Object[capacity];
+        this.medalArray = (ME[]) new Comparable[capacity];
         this.counter = 0;
+
     }
 
     // _______________________ Methoden __________________________
@@ -82,11 +83,12 @@ public class Medals<ME extends Comparable<ME>> implements Container<ME> {    // 
 
     @Override
     public String toString() {
-        for (int i = 0; i < medalArray.length; i++) {
-            if(medalArray[i] != null) {
-                System.out.println(medalArray[i].name+", "+medalArray[i].material+", "+medalArray[i].year);
+        String result = "";
+        for (int i = 0; i < size; i++) {
+            if (medalArray[i] != null) {
+                result += medalArray[i].toString() + "\n";
             }
         }
-        return "";
+        return result;
     }
 }

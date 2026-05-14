@@ -59,4 +59,9 @@ public class Medal implements Comparable<Medal> {
             return 0;
         }
     }
+
+    @Override
+    public String toString() {
+        return this.name + ", " + this.material + ", " + this.year;
+    }
 }
