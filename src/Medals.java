@@ -1,5 +1,4 @@
-public class Medals<ME> implements Container<ME> {    // ME für Medal Elements
-
+public class Medals<ME extends Comparable<ME>> implements Container<ME> {    // ME für Medal Elements
     private ME[] medalArray;
     private int size = 0;
     private int counter;
@@ -45,6 +44,7 @@ public class Medals<ME> implements Container<ME> {    // ME für Medal Elements
         return index(containsMedal) >= 0;
     }
 
+    @Override   // Override hat was mit Container Vertrag zu tun, dass es überschrieben wird
     public int size() {
         return size;
     }
@@ -61,7 +61,7 @@ public class Medals<ME> implements Container<ME> {    // ME für Medal Elements
     }
 
     // Binary search
-    private int index(ME key) {
+    public int index(ME key) {
         int low = 0;
         int high = size - 1;
         while (low <= high) {
