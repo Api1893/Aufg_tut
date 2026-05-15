@@ -1,31 +1,30 @@
-public class SortedLinkedList  {
+public class SortedLinkedList<ME extends Comparable<ME>> implements Container<ME> {
     private int size = 0;
     private Node head;
 
     // Innere Klasse
     private class Node {
-        int number;
+        ME number ;
         Node next;
 
-        Node(int number) {
+        Node(ME number) {
             this.number = number;
         }
     }
 
-    public boolean add(int number){
+    // Sortierung, dass das neue Objekt immer vorne ist (Alphabetisch)
+    public int add(ME number){
         // Neuer Knoten erstellen
         Node newHead = new Node(number);
-
         // Prüfung ob Kopf leer oder Kopf kleiner gleich ist
-        if (head == null || number <= head.number) {
+        if (head == null || number.compareTo(head.number) <= 0) {
             newHead.next = head;
             head = newHead;
         }
         else {
             // current Hilfsvarible für durchlauf
             Node current = head;
-
-            while (current.next != null && current.next.number < number) {
+            while (current.next != null && number.compareTo(current.next.number) < 0) {
                 current = current.next;
             }
             newHead.next = current.next;
@@ -33,11 +32,21 @@ public class SortedLinkedList  {
         }
         // Die Kapazität der Liste wird um 1 erhöt
         size++;
+        return 0;
+    }
+
+    public int index(ME element) {
+        int result = index(element);
+        return result;
+    }
+
+    public boolean remove(ME elements) {
+        boolean elementToRemove = remove(elements);
         return true;
     }
 
     // Suchfunktion
-    public boolean contains(int number) {
+    public boolean contains(ME number) {
         for (Node node = head; node != null; node = node.next) {
             if (node.number == number) {
                 return true;

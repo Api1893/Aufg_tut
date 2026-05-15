@@ -34,6 +34,7 @@ class Main {
 
         // Aufgabe 3 a)
         System.out.println("______________Aufgabe_3_a)_____________");
+
     }
 
     private static void testMedalContainer(Container<Medal> medals) {
@@ -49,7 +50,6 @@ class Main {
         System.out.println(medals);
         System.out.println(medals.size());
         for (int i = 0; i < olympics2026.length; i++) {
-
             System.out.println(medals.contains(olympics2026[i]));
         }
         System.out.println(medals.size());
@@ -57,7 +57,6 @@ class Main {
             System.out.println(medals.remove(olympics2026[i]));
         }
         System.out.println(medals.size());
-
         /*
             Bei der Testaufruf musste ich zuerst im Container,
             das contains und remove hinzufügen.

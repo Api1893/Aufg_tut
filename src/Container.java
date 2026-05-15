@@ -9,6 +9,6 @@ public interface Container<ME> {
     int size();
     int add(ME element);
     int index(ME element);
-    boolean contains(ME element);
     boolean remove(ME elements);
+    boolean contains(ME element);
 }

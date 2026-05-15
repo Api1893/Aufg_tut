@@ -25,7 +25,6 @@ public class Medal implements Comparable<Medal> {
         if (this.name.equals(other.name) &&
                 this.material.equals(other.material) &&
                 this.year == other.year) {
-            System.out.println("Alles gleich");
             return true;
         }
         return false;

@@ -40,15 +40,17 @@ public class Medals<ME extends Comparable<ME>> implements Container<ME> {    // 
     }
 
     // _______________Gibt_aus_ob_index_gefunden_wurde________________
+    @Override
     public boolean contains(ME containsMedal) {
         // Ruft die binäre Suche auf und prüft, ob ein gültiger Index gefunden wurde
         return index(containsMedal) >= 0;
     }
 
     // __________________Entfernen_eines_Platzes_im_Array____________________
+    @Override
     public boolean remove(ME removeMedal) {
         for (int i = 0; i < this.medalArray.length; i++) {
-            if (medalArray[i] == removeMedal) {
+            if (medalArray[i].equals(removeMedal)) {
                 medalArray[i] = medalArray[this.medalArray.length - 1];
                 size--;
                 return true;
@@ -58,6 +60,7 @@ public class Medals<ME extends Comparable<ME>> implements Container<ME> {    // 
     }
 
     // _____________Binary_search_____________
+    @Override
     public int index(ME key) {
         int low = 0;
         int high = size - 1;
