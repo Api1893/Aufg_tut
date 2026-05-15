@@ -3,13 +3,14 @@ public class Medal implements Comparable<Medal> {
     protected String material;
     protected int year;
 
-    // Konstruktor Medal
+    // __________________Konstruktor Medal______________________
     Medal(String name, String material, int year) {
         this.name = name;
         this.material = material;
         this.year = year;
     }
 
+    // __________________Gleichheit_prüfen_________________
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -31,11 +32,11 @@ public class Medal implements Comparable<Medal> {
     }
 
     // Aufgabe 2 b) und c), Blatt 6
-    public int compareTo(Medal compareObject){
+    public int compareTo(Medal compareObject) {
         String firstCompareAlphabet = compareObject.name.toLowerCase();
         String secondCompareAlphabet = compareObject.material.toLowerCase();
         int thirdCompareYear = compareObject.year;
-
+        // Der Vergleich wird übergeben, damit es dann verglichen werden kann
         int lexicographicalOrderName = firstCompareAlphabet.compareTo(this.name.toLowerCase());
         int lexicographicalOrderMaterial = secondCompareAlphabet.compareTo(this.material.toLowerCase());
 
@@ -44,10 +45,10 @@ public class Medal implements Comparable<Medal> {
             return -1;
         } else if(lexicographicalOrderName > 0) {
             return 1;
-        } else if(lexicographicalOrderMaterial < 0){
-            // Wenn MAterial < 0
+        } else if(lexicographicalOrderMaterial < 0) {
+            // Wenn Material < 0
             return -1;
-        } else if(lexicographicalOrderMaterial > 0){
+        } else if(lexicographicalOrderMaterial > 0) {
             return 1;
         } else if(thirdCompareYear < this.year) {
             // Wenn Jahr < 0
@@ -60,6 +61,7 @@ public class Medal implements Comparable<Medal> {
         }
     }
 
+    // _____________String_ausgabe_mit_return_____________
     @Override
     public String toString() {
         return this.name + ", " + this.material + ", " + this.year;

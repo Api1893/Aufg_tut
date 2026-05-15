@@ -50,8 +50,8 @@ public class SortedLinkedList  {
         return size;
     }
 
-    // Inhalt auszulessen
-    public void dump() {
+    // Inhalt auszulessen mit String
+    public String toString() {
         // Wir starten am Kopf der Liste
         Node current = head;
         // Wir laufen so lange weiter, bis wir hinter dem letzten Element (null) sind
@@ -60,5 +60,6 @@ public class SortedLinkedList  {
             // Zum nächsten Knoten springen
             current = current.next;
         }
+        return "";
     }
 }

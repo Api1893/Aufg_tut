@@ -7,7 +7,6 @@ public class Medals<ME extends Comparable<ME>> implements Container<ME> {    // 
     Medals(int capacity) {
         this.medalArray = (ME[]) new Comparable[capacity];
         this.counter = 0;
-
     }
 
     // _______________________ Methoden __________________________
@@ -18,7 +17,7 @@ public class Medals<ME extends Comparable<ME>> implements Container<ME> {    // 
         medalArray[j] = temp;
     }
 
-    // Vertauschen
+    // ___________________Vertauschen_____________________
     public int add(ME addingMedal) {
         // Prüfen, ob noch Platz im Array ist
         if (size == medalArray.length) {
@@ -40,17 +39,14 @@ public class Medals<ME extends Comparable<ME>> implements Container<ME> {    // 
         return 0;
     }
 
+    // _______________Gibt_aus_ob_index_gefunden_wurde________________
     public boolean contains(ME containsMedal) {
         // Ruft die binäre Suche auf und prüft, ob ein gültiger Index gefunden wurde
         return index(containsMedal) >= 0;
     }
 
-    @Override   // Override hat was mit Container Vertrag zu tun, dass es überschrieben wird
-    public int size() {
-        return size;
-    }
-
-    public boolean remove(Medal removeMedal) {
+    // __________________Entfernen_eines_Platzes_im_Array____________________
+    public boolean remove(ME removeMedal) {
         for (int i = 0; i < this.medalArray.length; i++) {
             if (medalArray[i] == removeMedal) {
                 medalArray[i] = medalArray[this.medalArray.length - 1];
@@ -61,7 +57,7 @@ public class Medals<ME extends Comparable<ME>> implements Container<ME> {    // 
         return false;
     }
 
-    // Binary search
+    // _____________Binary_search_____________
     public int index(ME key) {
         int low = 0;
         int high = size - 1;
@@ -73,9 +69,9 @@ public class Medals<ME extends Comparable<ME>> implements Container<ME> {    // 
             }
             // Hier wurde compareTo ausgetauscht mit isLess
             if (midMedal.compareTo(key) < 0) {
-                low = mid + 1; // Suche in der rechten Hälfte weiter [9]
+                low = mid + 1; // Suche in der rechten Hälfte weiter
             } else {
-                high = mid - 1; // Suche in der linken Hälfte weiter [9]
+                high = mid - 1; // Suche in der linken Hälfte weiter
             }
         }
         return -1; // Nicht enthalten
@@ -86,9 +82,20 @@ public class Medals<ME extends Comparable<ME>> implements Container<ME> {    // 
         String result = "";
         for (int i = 0; i < size; i++) {
             if (medalArray[i] != null) {
-                result += medalArray[i].toString() + "\n";
+                /*
+                    Die Methode toString muss aufgerufen werden, um den String auszugeben.
+                    Das Problem ist, dass er sonst aufgrund des return-Befehls nur
+                    einmal ausgegeben wird. Die Ausgabe in String wird in der Variable
+                    result gespeichert und erst dann ausgegeben.
+                */
+                result = result + medalArray[i].toString() + "\n";
             }
         }
         return result;
+    }
+
+    @Override   // Override abhängig vom Vertrag
+    public int size() {
+        return size;
     }
 }
