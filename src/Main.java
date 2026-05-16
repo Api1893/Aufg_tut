@@ -33,8 +33,8 @@ class Main {
         testMedalContainer(myMedals);
 
         // Aufgabe 3 a)
-        System.out.println("______________Aufgabe_3_a)_____________");
-
+        System.out.println("______________Aufgabe_3_____________");
+        System.out.println("Programm gedebug");
     }
 
     private static void testMedalContainer(Container<Medal> medals) {

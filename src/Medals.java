@@ -17,11 +17,11 @@ public class Medals<ME extends Comparable<ME>> implements Container<ME> {    // 
         medalArray[j] = temp;
     }
 
-    // ___________________Vertauschen_____________________
-    public int add(ME addingMedal) {
+    // ________Hinzufügen_und_an_der_richtigen_Stelle_vertauschen__________
+    public boolean add(ME addingMedal) {
         // Prüfen, ob noch Platz im Array ist
         if (size == medalArray.length) {
-            return 0;
+            return true;
         }
         // Das Medal-Objekt an die nächste freie Stelle setzen
         medalArray[size] = addingMedal;
@@ -33,13 +33,13 @@ public class Medals<ME extends Comparable<ME>> implements Container<ME> {    // 
                 swap(i - 1, i);
             } else {
                 // Wenn es nicht mehr kleiner ist, ist die richtige Position erreicht.
-                return 0;
+                return false;
             }
         }
-        return 0;
+        return true;
     }
 
-    // _______________Gibt_aus_ob_index_gefunden_wurde________________
+    // _______________Gibt_aus_ob_index_gefunden_wurde_____________________
     @Override
     public boolean contains(ME containsMedal) {
         // Ruft die binäre Suche auf und prüft, ob ein gültiger Index gefunden wurde

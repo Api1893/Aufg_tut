@@ -7,7 +7,7 @@
 
 public interface Container<ME> {
     int size();
-    int add(ME element);
+    boolean add(ME element);
     int index(ME element);
     boolean remove(ME elements);
     boolean contains(ME element);

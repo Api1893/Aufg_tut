@@ -13,7 +13,7 @@ public class SortedLinkedList<ME extends Comparable<ME>> implements Container<ME
     }
 
     // Sortierung, dass das neue Objekt immer vorne ist (Alphabetisch)
-    public int add(ME number){
+    public boolean add(ME number){
         // Neuer Knoten erstellen
         Node newHead = new Node(number);
         // Prüfung ob Kopf leer oder Kopf kleiner gleich ist
@@ -32,7 +32,7 @@ public class SortedLinkedList<ME extends Comparable<ME>> implements Container<ME
         }
         // Die Kapazität der Liste wird um 1 erhöt
         size++;
-        return 0;
+        return true;
     }
 
     public int index(ME element) {
