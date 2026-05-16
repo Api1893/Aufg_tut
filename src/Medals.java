@@ -18,6 +18,7 @@ public class Medals<ME extends Comparable<ME>> implements Container<ME> {    // 
     }
 
     // ________Hinzufügen_und_an_der_richtigen_Stelle_vertauschen__________
+    @Override
     public boolean add(ME addingMedal) {
         // Prüfen, ob noch Platz im Array ist
         if (size == medalArray.length) {

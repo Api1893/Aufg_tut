@@ -13,6 +13,7 @@ public class SortedLinkedList<ME extends Comparable<ME>> implements Container<ME
     }
 
     // Sortierung, dass das neue Objekt immer vorne ist (Alphabetisch)
+    @Override
     public boolean add(ME number){
         // Neuer Knoten erstellen
         Node newHead = new Node(number);
