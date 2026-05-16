@@ -33,7 +33,7 @@ public class Medals<ME extends Comparable<ME>> implements Container<ME> {    // 
                 swap(i - 1, i);
             } else {
                 // Wenn es nicht mehr kleiner ist, ist die richtige Position erreicht.
-                return false;
+                return true;
             }
         }
         return true;
